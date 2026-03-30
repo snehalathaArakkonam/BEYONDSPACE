@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback • BEYONDSPACE</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <canvas id="particles" class="particle-canvas"></canvas>
+    <nav class="navbar"><!-- navbar identical --></nav>
+
+    <header class="page-header">
+        <h1 data-en="TELL US HOW WE DID!" data-te="మేము ఎలా చేశామో చెప్పండి!">TELL US HOW WE DID!</h1>
+    </header>
+
+    <main class="feedback-main">
+        <form id="feedback-form">
+            <div class="star-rating">
+                <span onclick="rate(1)">⭐</span>
+                <span onclick="rate(2)">⭐</span>
+                <span onclick="rate(3)">⭐</span>
+                <span onclick="rate(4)">⭐</span>
+                <span onclick="rate(5)">⭐</span>
+            </div>
+            
+            <input type="text" id="name" placeholder="Your name (optional)" required>
+            <select id="age-group">
+                <option value="">Age group</option>
+                <option value="8-12">8-12 years</option>
+                <option value="13-15">13-15 years</option>
+                <option value="16+">16+ (college)</option>
+            </select>
+            
+            <select id="favorite">
+                <option value="">Favourite section?</option>
+                <option value="Simulator">Rocket Simulator</option>
+                <option value="Quiz">Space Quiz</option>
+                <option value="Avatar">Avatar Customizer</option>
+                <option value="Destinations">Destinations</option>
+            </select>
+            
+            <textarea id="message" rows="5" placeholder="What did you love? Any suggestions?"></textarea>
+            
+            <button type="button" onclick="submitFeedback()" class="glow-button">SEND TO MISSION CONTROL</button>
+        </form>
+        
+        <div id="success-screen" class="hidden">
+            <h2>THANK YOU! 🎉</h2>
+            <p>Your feedback has been beamed to ISRO HQ!</p>
+            <div id="confetti-container"></div>
+        </div>
+        
+        <!-- Fake Testimonials -->
+        <div class="testimonials">
+            <h3>What other kids are saying</h3>
+            <div class="testimonial">"Best website ever! I launched a rocket and got 100% on the quiz!" – Arjun, 11, Hyderabad</div>
+            <div class="testimonial">"Avatar customizer is so cool. I downloaded my ID card!" – Priya, 13, Vijayawada</div>
+        </div>
+    </main>
+
+    <footer class="footer"><!-- footer --></footer>
+    <button id="back-to-top" class="back-to-top">🚀</button>
+
+    <script src="js/particles.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/feedback.js"></script>
+</body>
+</html>

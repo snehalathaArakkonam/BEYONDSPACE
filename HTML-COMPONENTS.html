@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEYONDSPACE - HTML Components</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<!-- ========================================== -->
+<!-- BEYONDSPACE - COMPLETE NAVBAR CODE -->  
+<!-- Copy paste this into all HTML pages -->
+<!-- ========================================== -->
+
+<nav class="navbar">
+    <div class="nav-container">
+        <!-- Logo -->
+        <div class="logo" onclick="window.location.href='index.html'" style="cursor:pointer;">
+            <span class="logo-text">BEYONDSPACE</span>
+            <span class="rocket-emoji">🚀</span>
+        </div>
+
+        <!-- Desktop Navigation Links -->
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link" data-en="Home" data-te="హోమ్">Home</a></li>
+            <li><a href="destinations.html" class="nav-link" data-en="Destinations" data-te="గమ్యాలు">Destinations</a></li>
+            <li><a href="fleet.html" class="nav-link" data-en="Fleet" data-te="వాహనాలు">Fleet</a></li>
+            <li><a href="experiences.html" class="nav-link" data-en="Experiences" data-te="అనుభవాలు">Experiences</a></li>
+            <li><a href="learn.html" class="nav-link" data-en="Learn" data-te="నేర్చుకో">Learn</a></li>
+            <li><a href="book.html" class="nav-link" data-en="Book" data-te="బుక్ చేయి">Book</a></li>
+            <li><a href="gallery.html" class="nav-link" data-en="Gallery" data-te="గాలరీ">Gallery</a></li>
+            <li><a href="about.html" class="nav-link" data-en="About" data-te="గురించి">About</a></li>
+            <li><a href="feedback.html" class="nav-link" data-en="Feedback" data-te="ఫీడ్‌బ్యాక్">Feedback</a></li>
+        </ul>
+
+        <!-- Right side actions -->
+        <div class="nav-actions">
+            <!-- Language Toggle -->
+            <button id="lang-toggle" class="lang-btn" aria-label="Toggle Language" data-en="Language" data-te="భాష">
+                🇮🇳 EN / తెలుగు
+            </button>
+
+            <!-- Achievements Badge -->
+            <button id="achievements-btn" class="achievement-btn" aria-label="View Achievements" data-en="Achievements" data-te="సాధనలు">
+                🏆 <span id="badge-count" class="badge-count">0</span>
+            </button>
+
+            <!-- Sound Toggle -->
+            <button id="sound-toggle" class="sound-btn" aria-label="Toggle Sound" data-en="Sound" data-te="సౌండ్">
+                🔊
+            </button>
+
+            <!-- Mobile Hamburger Menu -->
+            <button id="hamburger" class="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <ul class="mobile-links">
+            <li><a href="index.html" class="mobile-nav-link" data-en="Home" data-te="హోమ్">Home</a></li>
+            <li><a href="destinations.html" class="mobile-nav-link" data-en="Destinations" data-te="గమ్యాలు">Destinations</a></li>
+            <li><a href="fleet.html" class="mobile-nav-link" data-en="Fleet" data-te="వాహనాలు">Fleet</a></li>
+            <li><a href="experiences.html" class="mobile-nav-link" data-en="Experiences" data-te="అనుభవాలు">Experiences</a></li>
+            <li><a href="learn.html" class="mobile-nav-link" data-en="Learn" data-te="నేర్చుకో">Learn</a></li>
+            <li><a href="book.html" class="mobile-nav-link" data-en="Book" data-te="బుక్ చేయి">Book</a></li>
+            <li><a href="gallery.html" class="mobile-nav-link" data-en="Gallery" data-te="గాలరీ">Gallery</a></li>
+            <li><a href="about.html" class="mobile-nav-link" data-en="About" data-te="గురించి">About</a></li>
+            <li><a href="feedback.html" class="mobile-nav-link" data-en="Feedback" data-te="ఫీడ్‌బ్యాక్">Feedback</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ========================================== -->
+<!-- BEYONDSPACE - COMPLETE FOOTER CODE -->  
+<!-- Copy paste this into all HTML pages -->
+<!-- ========================================== -->
+
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Footer Left Section -->
+        <div class="footer-left">
+            <div class="logo-footer" data-en="BEYONDSPACE" data-te="బియాండ్‌స్పేస్">BEYONDSPACE <span class="rocket-emoji">🚀</span></div>
+            <p data-en="Inspiring India's Young Space Explorers" data-te="భారతదేశ యువ అంతరిక్ష అన్వేషకులను ప్రేరేపిస్తుంది">Inspiring India's Young Space Explorers</p>
+        </div>
+        <!-- Footer Center Links -->
+        <div class="footer-center">
+            <h4 data-en="Quick Links" data-te="శీఘ్ర లింకులు">Quick Links</h4>
+            <div class="footer-links">
+                <a href="index.html" class="footer-link" data-en="Home" data-te="హోమ్">Home</a>
+                <a href="destinations.html" class="footer-link" data-en="Destinations" data-te="గమ్యాలు">Destinations</a>
+                <a href="learn.html" class="footer-link" data-en="Learn" data-te="నేర్చుకో">Learn</a>
+                <a href="about.html" class="footer-link" data-en="About" data-te="గురించి">About</a>
+            </div>
+        </div>
+
+        <!-- Footer Right Section -->
+        <div class="footer-right">
+            <h4 data-en="Follow Us" data-te="మమ్మల్ని అనుసరించండి">Follow Us</h4>
+            <div class="footer-socials">
+                <a href="#" class="social-link" aria-label="GitHub" title="GitHub">GitHub</a>
+                <a href="#" class="social-link" aria-label="LinkedIn" title="LinkedIn">LinkedIn</a>
+                <a href="mailto:contact@beyondspace.com" class="social-link" aria-label="Email" title="Email">Email</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <p data-en="© 2026 BEYONDSPACE • All Rights Reserved" data-te="© 2026 బియాండ్‌స్పేస్ • అన్ని హక్కులు సంరక్షితమైనవి">© 2026 BEYONDSPACE • All Rights Reserved</p>
+        <p class="footer-credit" data-en="Made with ❤️ for India's Young Space Explorers" data-te="భారతదేశ యువ అంతరిక్ష అన్వేషకుల కోసం ❤️ తో రూపొందించబడింది">Made with ❤️ for India's Young Space Explorers</p>
+    </div>
+</footer>
+
+<!-- ========================================== -->
+<!-- BEYONDSPACE - ACHIEVEMENT MODAL -->  
+<!-- Copy paste this into all HTML pages -->
+<!-- ========================================== -->
+
+<div id="achievement-modal" class="modal achievement-modal">
+    <div class="modal-content">
+        <button class="modal-close" id="close-achievement" aria-label="Close Modal" title="Close">
+            &times;
+        </button>
+        <h2 class="modal-title" data-en="🏆 Your Space Badges" data-te="🏆 మీ అంతరిక్ష బ్యాడ్జ్‌లు">🏆 Your Space Badges</h2>
+        <div id="badges-grid" class="badges-grid">
+            <!-- Dynamically populated by JavaScript -->
+        </div>
+        <p class="achievement-hint" data-en="Keep exploring to unlock more achievements!" data-te="మరిన్ని సాధనలను అన్‌లాక్ చేయడానికి అన్వేషణ చేయండి!">Keep exploring to unlock more achievements!</p>
+        <button class="modal-button" id="achievements-close-btn" data-en="Close" data-te="మూసివేయు">Close</button>
+    </div>
+</div>
+
+<!-- ========================================== -->
+<!-- BEYONDSPACE - BACK-TO-TOP BUTTON -->  
+<!-- Copy paste this into all HTML pages -->
+<!-- ========================================== -->
+
+<button id="back-to-top" class="back-to-top" aria-label="Back to Top" title="Back to Top">
+    🚀 <span class="back-to-top-text" data-en="Top" data-te="పైకి">Top</span>
+</button>
+
+<!-- ========================================== -->
+<!-- SCRIPT INCLUDES NEEDED ON ALL PAGES -->
+<!-- Copy paste all scripts at the end of body tag -->
+<!-- ========================================== -->
+
+<script src="js/particles.js"></script>
+<script src="js/main.js"></script>
+<script src="js/solar-system.js"></script>
+<script src="js/rocket-simulator.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/avatar-customizer.js"></script>
+<script src="js/trip-customizer.js"></script>
+<script src="js/feedback.js"></script>
+
+</body>
+</html>
+

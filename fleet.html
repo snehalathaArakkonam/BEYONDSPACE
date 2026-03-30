@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleet • BEYONDSPACE</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@400;500;700&display=swap');
+    </style>
+</head>
+<body>
+    <canvas id="particles" class="particle-canvas"></canvas>
+
+    <header class="page-header">
+        <h1 data-en="OUR FLEET" data-te="మా వాహనాలు">OUR FLEET</h1>
+        <p>Next-gen rockets &amp; spacecrafts designed for young Indian space tourists</p>
+    </header>
+
+    <main class="fleet-main">
+        <div class="fleet-grid">
+            <div class="fleet-card" onmouseenter="showRocketInfo(0)">
+                <img src="https://space.skyrocket.de/img_lau/gslv-mk3-2__gsat-29__1.jpg" alt="LVM-3" loading="lazy">
+                <h3>LVM-3 “Vikram”</h3>
+                <div class="spec">Crew: 4 • Range: Earth Orbit • ISRO Flagship</div>
+                <div class="info-panel" id="info-0">India’s most powerful rocket! Used for Chandrayaan missions. Top speed 28,000 km/h.</div>
+            </div>
+            <div class="fleet-card" onmouseenter="showRocketInfo(1)">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpa9L-nzt9dQSsL2INbmfp_xeh1CMmdVZTLg&s" alt="Starship" loading="lazy">
+                <h3>Neon Starship</h3>
+                <div class="spec">Crew: 12 • Mars capable • Reusable</div>
+                <div class="info-panel" id="info-1">Fully reusable! 100% Indian-designed engines with neon thrusters. Zero gravity party deck included.</div>
+            </div>
+            <div class="fleet-card" onmouseenter="showRocketInfo(2)">
+                <img src="https://cdn.mos.cms.futurecdn.net/6veU92WmjBwv8QLrWMkEAo.jpg" alt="Orbital Hopper" loading="lazy">
+                <h3>Moon Hopper</h3>
+                <div class="spec">Crew: 6 • Lunar landing • 48-hour trips</div>
+                <div class="info-panel" id="info-2">Designed for school trips! Land on the Moon and plant your school flag.</div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer"><!-- Same footer --></footer>
+    <button id="back-to-top" class="back-to-top">🚀</button>
+
+    <script src="js/particles.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        function showRocketInfo(id) {
+            const panels = document.querySelectorAll('.info-panel');
+            panels.forEach(p => p.style.opacity = 0);
+            document.getElementById('info-' + id).style.opacity = 1;
+            unlockAchievement('fleet-fan');
+        }
+    </script>
+</body>
+</html>

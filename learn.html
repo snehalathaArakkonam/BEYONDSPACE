@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn • BEYONDSPACE</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <canvas id="particles" class="particle-canvas"></canvas>
+    <nav class="navbar"><!-- navbar identical --></nav>
+
+    <header class="page-header">
+        <h1 data-en="SPACE ACADEMY" data-te="స్పేస్ అకాడమీ">SPACE ACADEMY</h1>
+    </header>
+
+    <!-- Quiz -->
+    <section class="quiz-section">
+        <h2 data-en="🧪 Space Knowledge Quiz" data-te="🧪 స్పేస్ క్విజ్">🧪 Space Knowledge Quiz</h2>
+        <div id="quiz-container">
+            <div id="question"></div>
+            <div id="options" class="options-grid"></div>
+            <div id="quiz-progress"></div>
+        </div>
+        <div id="quiz-result" class="hidden"></div>
+    </section>
+
+    <!-- ISRO Timeline -->
+    <section class="isro-timeline">
+        <h2>ISRO Corner – Indian Space Heroes</h2>
+        <div class="timeline-slider" id="timeline">
+            <!-- JS populated -->
+        </div>
+    </section>
+
+    <!-- Avatar Customizer -->
+    <section class="avatar-section">
+        <h2 data-en="👨‍🚀 Create Your Astronaut Avatar" data-te="👨‍🚀 మీ అస్ట్రోనాట్ అవతార్ సృష్టించండి">👨‍🚀 Create Your Astronaut Avatar</h2>
+        <div class="customizer">
+            <div class="preview-area" id="avatar-preview">
+                <!-- Canvas avatar rendered here -->
+            </div>
+            
+            <div class="options">
+                <h4>Helmet Color</h4>
+                <div class="color-options">
+                    <div onclick="changeHelmet(0)" style="background:#fff">⚪</div>
+                    <div onclick="changeHelmet(1)" style="background:#ff8800">🟠</div>
+                    <div onclick="changeHelmet(2)" style="background:#00f0ff">🔵</div>
+                </div>
+                
+                <h4>Suit Style</h4>
+                <select id="suit-select" onchange="updateAvatar()">
+                    <option value="0">ISRO Orange</option>
+                    <option value="1">Neon Cyber</option>
+                    <option value="2">Chandrayaan White</option>
+                </select>
+                
+                <h4>Your Name</h4>
+                <input type="text" id="astronaut-name" placeholder="Enter your name" value="Sneha">
+                
+                <button onclick="generateIDCard()" class="glow-button">GENERATE ISRO ID CARD + DOWNLOAD</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer"><!-- footer --></footer>
+    <button id="back-to-top" class="back-to-top">🚀</button>
+
+    <script src="js/particles.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/avatar-customizer.js"></script>
+    <script>
+        window.onload = () => {
+            loadQuiz();
+            loadISROTimeline();
+            initAvatarCustomizer();
+        };
+    </script>
+</body>
+</html>

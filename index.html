@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BEYONDSPACE - Launch your space adventure! Fun for kids, students & space lovers in India 🚀">
+    <title>BEYONDSPACE | Launch Your Journey 2026</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@400;500;700&display=swap');
+    </style>
+</head>
+<body>
+    <!-- Particle Background -->
+    <canvas id="particles" class="particle-canvas"></canvas>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="logo">
+                <span class="logo-text">BEYONDSPACE</span>
+                <span class="rocket-emoji">🚀</span>
+            </div>
+
+            <!-- Desktop Links -->
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link active" data-en="Home" data-te="హోమ్">Home</a></li>
+                <li><a href="destinations.html" class="nav-link" data-en="Destinations" data-te="గమ్యాలు">Destinations</a></li>
+                <li><a href="fleet.html" class="nav-link" data-en="Fleet" data-te="వాహనాలు">Fleet</a></li>
+                <li><a href="experiences.html" class="nav-link" data-en="Experiences" data-te="అనుభవాలు">Experiences</a></li>
+                <li><a href="learn.html" class="nav-link" data-en="Learn" data-te="నేర్చుకో">Learn</a></li>
+                <li><a href="book.html" class="nav-link" data-en="Book" data-te="బుక్ చేయి">Book</a></li>
+                <li><a href="gallery.html" class="nav-link" data-en="Gallery" data-te="గాలరీ">Gallery</a></li>
+                <li><a href="about.html" class="nav-link" data-en="About" data-te="గురించి">About</a></li>
+                <li><a href="feedback.html" class="nav-link" data-en="Feedback" data-te="ఫీడ్‌బ్యాక్">Feedback</a></li>
+            </ul>
+
+            <!-- Right side actions -->
+            <div class="nav-actions">
+                <!-- Language Toggle -->
+                <button id="lang-toggle" class="lang-btn" aria-label="Toggle Telugu">
+                    🇮🇳 EN / తెలుగు
+                </button>
+
+                <!-- Achievements -->
+                <button id="achievements-btn" class="achievement-btn" aria-label="Achievements">
+                    🏆 <span id="badge-count" class="badge-count">0</span>
+                </button>
+
+                <!-- Sound Toggle -->
+                <button id="sound-toggle" class="sound-btn" aria-label="Toggle sound">
+                    🔊
+                </button>
+
+                <!-- Mobile Hamburger -->
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <ul class="mobile-links">
+                <li><a href="index.html" data-en="Home" data-te="హోమ్">Home</a></li>
+                <li><a href="destinations.html" data-en="Destinations" data-te="గమ్యాలు">Destinations</a></li>
+                <li><a href="fleet.html" data-en="Fleet" data-te="వాహనాలు">Fleet</a></li>
+                <li><a href="experiences.html" data-en="Experiences" data-te="అనుభవాలు">Experiences</a></li>
+                <li><a href="learn.html" data-en="Learn" data-te="నేర్చుకో">Learn</a></li>
+                <li><a href="book.html" data-en="Book" data-te="బుక్ చేయి">Book</a></li>
+                <li><a href="gallery.html" data-en="Gallery" data-te="గాలరీ">Gallery</a></li>
+                <li><a href="about.html" data-en="About" data-te="గురించి">About</a></li>
+                <li><a href="feedback.html" data-en="Feedback" data-te="ఫీడ్‌బ్యాక్">Feedback</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🌟 Made for Indian Kids &amp; Students 8-15</div>
+            <h1 class="hero-title" data-en="LAUNCH YOUR JOURNEY<br>2026" data-te="2026లో మీ ప్రయాణం<br>ప్రారంభించండి">LAUNCH YOUR JOURNEY<br>2026</h1>
+            <p class="hero-subtitle" data-en="Experience the cosmos like never before! Real ISRO facts + epic adventures" data-te="అంతరిక్షాన్ని ఎప్పుడూ లేనంత ఆహ్లాదంగా అనుభవించండి! ISRO నిజాలు + ఎపిక్ అడ్వెంచర్స్">Experience the cosmos like never before! Real ISRO facts + epic adventures</p>
+            
+            <div class="hero-cta">
+                <button onclick="launchJourney()" class="cta-button glow-button">
+                    <span class="rocket-trail">🚀</span>
+                    START EXPLORING
+                </button>
+                <button onclick="document.getElementById('solar-system').scrollIntoView({behavior:'smooth'})" class="secondary-button">
+                    SEE SOLAR SYSTEM
+                </button>
+            </div>
+
+            <!-- Floating planets -->
+            <div class="floating-planets">
+                <div class="planet planet-1" style="animation-delay: 0s;">🪐</div>
+                <div class="planet planet-2" style="animation-delay: 1.2s;">🌍</div>
+                <div class="planet planet-3" style="animation-delay: 2.5s;">🔴</div>
+                <div class="planet planet-4" style="animation-delay: 0.8s;">🌕</div>
+            </div>
+
+            <!-- Shooting stars container -->
+            <div class="shooting-stars"></div>
+        </div>
+
+        <!-- Countdown -->
+        <div class="countdown-container">
+            <h3 data-en="NEXT MARS MISSION 2026" data-te="తదుపరి మార్స్ మిషన్ 2026">NEXT MARS MISSION 2026</h3>
+            <div class="countdown" id="countdown">
+                <div class="time-block"><span id="days">45</span><small>DAYS</small></div>
+                <div class="time-block"><span id="hours">12</span><small>HOURS</small></div>
+                <div class="time-block"><span id="minutes">38</span><small>MIN</small></div>
+                <div class="time-block"><span id="seconds">19</span><small>SEC</small></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- INTERACTIVE SOLAR SYSTEM -->
+    <section class="solar-section" id="solar-system">
+        <div class="section-header">
+            <h2 data-en="🪐 Interactive Solar System" data-te="🪐 ఇంటరాక్టివ్ సోలార్ సిస్టం">🪐 Interactive Solar System</h2>
+            <p data-en="Click any planet to unlock fun facts + ISRO connections!" data-te="ఏ ప్లానెట్‌నైనా క్లిక్ చేసి సరదా ఫాక్టులు తెలుసుకోండి!">Click any planet to unlock fun facts + ISRO connections!</p>
+        </div>
+        <div class="solar-canvas-wrapper">
+            <canvas id="solar-canvas" width="1100" height="620"></canvas>
+            <div id="planet-info" class="planet-popup">
+                <h3 id="planet-name"></h3>
+                <p id="planet-fact"></p>
+                <button onclick="closePlanetInfo()" class="close-popup">✕ CLOSE</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live News Ticker -->
+    <div class="news-ticker">
+        <div class="ticker-content" id="ticker">
+            • ISRO’s Gaganyaan crew selected! • Chandrayaan-4 planning 2028 landing on Moon • Private Indian space startups launching 2026 • You could be the next astronaut! • Mangalyaan-2 mission approved • 
+        </div>
+    </div>
+
+    <!-- Quick Explore Teaser -->
+    <section class="teaser-section">
+        <div class="teaser-grid">
+            <a href="destinations.html" class="teaser-card">
+                <div class="teaser-icon">🌕</div>
+                <h3 data-en="Destinations" data-te="గమ్యాలు">Destinations</h3>
+                <p>Visit Moon, Mars, Europa &amp; more</p>
+            </a>
+            <a href="experiences.html" class="teaser-card">
+                <div class="teaser-icon">🎮</div>
+                <h3 data-en="Rocket Simulator" data-te="రాకెట్ సిమ్యులేటర్">Rocket Simulator</h3>
+                <p>Launch your own rocket!</p>
+            </a>
+            <a href="learn.html" class="teaser-card">
+                <div class="teaser-icon">🧪</div>
+                <h3 data-en="Space Quiz + Avatar" data-te="స్పేస్ క్విజ్ + అవతార్">Space Quiz + Avatar</h3>
+                <p>Earn badges &amp; ISRO ID card</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="logo-footer">BEYONDSPACE <span class="rocket-emoji">🚀</span></div>
+                <p data-en="Made with ❤️ by Snehalatha" data-te="స్నేహలత చేతి నుండి ❤️ తో తయారు చేయబడింది">Made with ❤️ by Snehalatha</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/snehalathaArakkonam" target="_blank" aria-label="GitHub">GitHub</a>
+                <a href="https://www.linkedin.com/in/sneha-arakkonam" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+                <a href="mailto:asnehalatha363@gmail.com" aria-label="Email">Email</a>
+            </div>
+            <div class="footer-right">
+                <p>© 2026 SPACERIDE2026 • All Rights Reserved • India’s Future in Space</p>
+                <div class="achievement-hint">Explore more pages to unlock badges!</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Rocket -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        🚀
+    </button>
+
+    <!-- Achievement Modal -->
+    <div id="achievement-modal" class="modal">
+        <div class="modal-content">
+            <h2>Your Space Badges 🏆</h2>
+            <div id="badges-grid" class="badges-grid"></div>
+            <button onclick="closeAchievementModal()" class="modal-close">Close</button>
+        </div>
+    </div>
+
+    <script src="js/particles.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/solar-system.js"></script>
+    <script>
+        // Page-specific inline script for index
+        let currentLang = 'en';
+        
+        function launchJourney() {
+            const hero = document.querySelector('.hero');
+            hero.style.transition = 'all 1.2s cubic-bezier(0.23, 1, 0.32, 1)';
+            hero.style.transform = 'translateY(-30px) scale(0.95)';
+            hero.style.opacity = '0';
+            
+            setTimeout(() => {
+                window.location.href = 'experiences.html';
+            }, 800);
+            
+            // Unlock first badge
+            unlockAchievement('launch-master');
+        }
+        
+        // Countdown
+        function startCountdown() {
+            // Target: 15 October 2026 (fake next big ISRO mission)
+            const targetDate = new Date('2026-10-15T00:00:00').getTime();
+            
+            const interval = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+                
+                if (distance < 0) {
+                    clearInterval(interval);
+                    return;
+                }
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').textContent = days < 10 ? '0' + days : days;
+                document.getElementById('hours').textContent = hours < 10 ? '0' + hours : hours;
+                document.getElementById('minutes').textContent = minutes < 10 ? '0' + minutes : minutes;
+                document.getElementById('seconds').textContent = seconds < 10 ? '0' + seconds : seconds;
+            }, 1000);
+        }
+        
+        // Shooting stars
+        function createShootingStar() {
+            const container = document.querySelector('.shooting-stars');
+            const star = document.createElement('div');
+            star.className = 'shooting-star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 40 + '%';
+            container.appendChild(star);
+            
+            setTimeout(() => star.remove(), 2500);
+        }
+        
+        // Initialize index page
+        window.addEventListener('load', () => {
+            startCountdown();
+            setInterval(createShootingStar, 800);
+            
+            // Language toggle already in main.js but ensure
+            console.log('%c🚀 BEYONDSPACE Home loaded successfully!', 'color:#00f0ff; font-family:Orbitron; font-size:14px');
+            
+            // Fake live ticker speed
+            const ticker = document.getElementById('ticker');
+            ticker.style.animationDuration = '35s';
+        });
+    </script>
+</body>
+</html>

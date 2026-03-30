@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book • BEYONDSPACE</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <canvas id="particles" class="particle-canvas"></canvas>
+    <nav class="navbar"><!-- navbar identical --></nav>
+
+    <header class="page-header">
+        <h1 data-en="CUSTOMIZE YOUR TRIP" data-te="మీ ప్రయాణం కస్టమైజ్ చేయండి">CUSTOMIZE YOUR TRIP</h1>
+    </header>
+
+    <main class="book-main">
+        <div class="trip-customizer">
+            <div class="step" id="step-1">
+                <h3>Select Destination</h3>
+                <div class="destination-options" id="dest-options"></div>
+            </div>
+            
+            <div class="step" id="step-2">
+                <h3>Add-ons (₹ in Crores)</h3>
+                <div id="addons-list"></div>
+            </div>
+            
+            <button onclick="generateItinerary()" class="glow-button" style="width:100%;margin-top:20px">GENERATE BEAUTIFUL ITINERARY</button>
+        </div>
+        
+        <!-- Generated Itinerary -->
+        <div id="itinerary-result" class="hidden itinerary-card">
+            <h2>Your Epic Journey</h2>
+            <div id="itinerary-content"></div>
+            <button onclick="downloadItinerary()" class="glow-button">📄 DOWNLOAD ITINERARY (PNG)</button>
+        </div>
+    </main>
+
+    <footer class="footer"><!-- footer --></footer>
+    <button id="back-to-top" class="back-to-top">🚀</button>
+
+    <script src="js/particles.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/trip-customizer.js"></script>
+</body>
+</html>

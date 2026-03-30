@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiences • BEYONDSPACE</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <canvas id="particles" class="particle-canvas"></canvas>
+    <nav class="navbar"><!-- navbar identical --></nav>
+
+    <header class="page-header">
+        <h1 data-en="ROCKET LAUNCH SIMULATOR" data-te="రాకెట్ లాంచ్ సిమ్యులేటర్">ROCKET LAUNCH SIMULATOR</h1>
+        <p>Adjust fuel, angle &amp; thrust → Launch to orbit! Physics powered by real rocket science</p>
+    </header>
+
+    <main class="simulator-main">
+        <div class="simulator">
+            <!-- Canvas Game -->
+            <canvas id="rocket-canvas" width="900" height="520" style="background: linear-gradient(#0b001f, #1a0033);"></canvas>
+            
+            <!-- Controls -->
+            <div class="controls-panel">
+                <div class="control">
+                    <label>Launch Angle <span id="angle-val">45°</span></label>
+                    <input type="range" id="angle" min="10" max="80" value="45">
+                </div>
+                <div class="control">
+                    <label>Thrust Power <span id="thrust-val">70%</span></label>
+                    <input type="range" id="thrust" min="30" max="100" value="70">
+                </div>
+                <div class="control">
+                    <label>Fuel (kg) <span id="fuel-val">1200</span></label>
+                    <input type="range" id="fuel" min="400" max="2000" value="1200">
+                </div>
+                
+                <button onclick="launchRocket()" id="launch-btn" class="launch-button glow-button">IGNITE ENGINES 🔥</button>
+                
+                <div id="result" class="launch-result"></div>
+            </div>
+        </div>
+        
+        <p class="tip">💡 Tip: 40-50° angle + 65% thrust + enough fuel = perfect orbit! Try different combos.</p>
+    </main>
+
+    <footer class="footer"><!-- footer --></footer>
+    <button id="back-to-top" class="back-to-top">🚀</button>
+
+    <script src="js/particles.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/rocket-simulator.js"></script>
+    <script>
+        // Auto-run simulator on load
+        window.addEventListener('load', initRocketSimulator);
+    </script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery • BEYONDSPACE</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        /* Extra Gallery specific styles (if main.css lo lekapothe) */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 40px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .gallery-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.2);
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+        .gallery-item:hover {
+            transform: scale(1.06);
+            box-shadow: 0 0 40px rgba(255, 0, 204, 0.6);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .gallery-item:hover::after { opacity: 1; }
+
+        .lightbox {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(11, 0, 31, 0.95);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            padding: 20px;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 12px;
+            box-shadow: 0 0 50px #00f0ff;
+        }
+        .close-lightbox {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            font-size: 3rem;
+            color: #ff00cc;
+            cursor: pointer;
+            z-index: 10000;
+        }
+        #lightbox-caption {
+            position: absolute;
+            bottom: 40px;
+            color: white;
+            font-size: 1.3rem;
+            text-align: center;
+            width: 90%;
+            text-shadow: 0 0 10px #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particles" class="particle-canvas"></canvas>
+
+    <!-- Full Navbar (copy from index.html or main.js lo handle chey) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">BEYONDSPACE</span>
+                <span class="rocket-emoji">🚀</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link" data-en="Home" data-te="హోమ్">Home</a></li>
+                <li><a href="destinations.html" class="nav-link" data-en="Destinations" data-te="గమ్యాలు">Destinations</a></li>
+                <li><a href="fleet.html" class="nav-link" data-en="Fleet" data-te="వాహనాలు">Fleet</a></li>
+                <li><a href="experiences.html" class="nav-link" data-en="Experiences" data-te="అనుభవాలు">Experiences</a></li>
+                <li><a href="learn.html" class="nav-link" data-en="Learn" data-te="నేర్చుకో">Learn</a></li>
+                <li><a href="book.html" class="nav-link" data-en="Book" data-te="బుక్ చేయి">Book</a></li>
+                <li><a href="gallery.html" class="nav-link active" data-en="Gallery" data-te="గాలరీ">Gallery</a></li>
+                <li><a href="about.html" class="nav-link" data-en="About" data-te="గురించి">About</a></li>
+                <li><a href="feedback.html" class="nav-link" data-en="Feedback" data-te="ఫీడ్‌బ్యాక్">Feedback</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="lang-toggle" class="lang-btn">🇮🇳 EN / తెలుగు</button>
+                <button id="achievements-btn" class="achievement-btn">🏆 <span id="badge-count" class="badge-count">0</span></button>
+                <button id="sound-toggle" class="sound-btn">🔊</button>
+                <button class="hamburger" id="hamburger">☰</button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobile-menu"></div>
+    </nav>
+
+    <header class="page-header">
+        <h1 data-en="COSMIC GALLERY" data-te="అంతరిక్ష గాలరీ">COSMIC GALLERY</h1>
+        <p data-en="Stunning real space photos from ISRO & NASA" data-te="ISRO & NASA నుండి అద్భుతమైన ఫోటోలు">Stunning real space photos from ISRO & NASA</p>
+    </header>
+
+    <div class="gallery-grid" id="gallery-grid">
+        <!-- JavaScript will populate -->
+    </div>
+
+    <!-- Lightbox -->
+       <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span onclick="closeLightbox()" class="close-lightbox">✕</span>
+        <img id="lightbox-img" 
+             src="https://picsum.photos/id/1015/1200/800" 
+             alt="BeyondSpace Cosmic Gallery Image" 
+             loading="lazy">
+        <p id="lightbox-caption"></p>
+    
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="logo-footer">BEYONDSPACE <span class="rocket-emoji">🚀</span></div>
+                <p data-en="Made with ❤️ by Snehalatha" data-te="స్నేహలత చేతి నుండి ❤️ తో తయారు చేయబడింది">Made with ❤️ by Snehalatha</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/snehalathaArakkonam" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/sneha-arakkonam" target="_blank">LinkedIn</a>
+                <a href="mailto:asnehalatha363@gmail.com">Email</a>
+            </div>
+            <div class="footer-right">
+                <p>© 2026 SPACERIDE2026 • All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="back-to-top">🚀</button>
+
+    <script src="js/particles.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        const images = [
+            {
+                url: "https://images-assets.nasa.gov/image/PIA19048/PIA19048~orig.jpg",
+                caption: "Chandrayaan-3 Landing Site - Moon 🇮🇳"
+            },
+            {
+                url: "https://images-assets.nasa.gov/image/PIA01322/PIA01322~orig.jpg",
+                caption: "Beautiful Mars Sunset by Perseverance Rover"
+            },
+            {
+                url: "https://images-assets.nasa.gov/image/PIA07782/PIA07782~orig.jpg",
+                caption: "Europa's Icy Cracks - Jupiter's Moon"
+            },
+            {
+                url: "https://images-assets.nasa.gov/image/PIA12235/PIA12235~orig.jpg",
+                caption: "Titan - Saturn's Mysterious Moon"
+            },
+            {
+                url: "https://images-assets.nasa.gov/image/PIA18182/PIA18182~orig.jpg",
+                caption: "Earth from ISS - Our Blue Planet"
+            },
+            {
+                url: "https://images-assets.nasa.gov/image/PIA04252/PIA04252~orig.jpg",
+                caption: "Carina Nebula - Birthplace of Stars"
+            },
+            {
+                url: "https://images-assets.nasa.gov/image/PIA01492/PIA01492~orig.jpg",
+                caption: "International Space Station orbiting Earth"
+            },
+            {
+                url: "https://images-assets.nasa.gov/image/PIA03149/PIA03149~orig.jpg",
+                caption: "Gaganyaan - India's Human Spaceflight Program"
+            }
+        ];
+
+        function renderGallery() {
+            const grid = document.getElementById('gallery-grid');
+            grid.innerHTML = '';
+
+            images.forEach((img, i) => {
+                const div = document.createElement('div');
+                div.className = 'gallery-item';
+                div.innerHTML = `
+                    <img src="${img.url}" 
+                         alt="${img.caption}" 
+                         onclick="openLightbox(${i})"
+                         loading="lazy">
+                `;
+                grid.appendChild(div);
+            });
+        }
+
+        function openLightbox(i) {
+            const lightbox = document.getElementById('lightbox');
+            document.getElementById('lightbox-img').src = images[i].url;
+            document.getElementById('lightbox-caption').textContent = images[i].caption;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        // Close lightbox when clicking outside image
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target.id === 'lightbox') closeLightbox();
+        });
+
+        // Initialize
+        window.addEventListener('load', () => {
+            renderGallery();
+            console.log('%c🌌 Gallery loaded with beautiful space images!', 'color:#00f0ff; font-size:16px');
+        });
+    </script>
+</body>
+</html>

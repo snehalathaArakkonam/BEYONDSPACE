@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations • BEYONDSPACE</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@400;500;700&display=swap');
+    </style>
+</head>
+<body>
+    <canvas id="particles" class="particle-canvas"></canvas>
+
+    <header class="page-header">
+        <h1 data-en="DESTINATIONS" data-te="గమ్యాలు">DESTINATIONS</h1>
+        <p data-en="Choose your next cosmic adventure! Parallax cards + 360° previews" data-te="మీ తదుపరి అంతరిక్ష సాహసం ఎంచుకోండి!">Choose your next cosmic adventure! Parallax cards + 360° previews</p>
+    </header>
+
+    <main class="destinations-main">
+        <div class="destinations-grid">
+            <!-- Moon -->
+            <div class="destination-card parallax-card" data-depth="0.1">
+                <div class="card-image">
+                    <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/media_bank/202308/chandrayaan-3-313218-16x9.jpg" alt="Moon" loading="lazy">
+                    <div class="neon-overlay">🌕</div>
+                </div>
+                <div class="card-body">
+                    <h3>Moon • 3.8 lakh km away</h3>
+                    <p data-en="Experience low-gravity jumps and see Earthrise! First Indian landing by 2028" data-te="తక్కువ గురుత్వాకర్షణ జంపులు + భూమి ఉదయం చూడండి!">Experience low-gravity jumps and see Earthrise! First Indian landing by 2028</p>
+                    <div class="card-footer">
+                        <button onclick="show360Modal('Moon')" class="explore-360">Explore in 360° 🌍</button>
+                        <button onclick="bookDestination('Moon')" class="book-now">Book Trip ₹4.9 Cr</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mars -->
+            <div class="destination-card parallax-card" data-depth="0.2">
+                <div class="card-image">
+                    <img src="https://i.ndtvimg.com/i/2015-04/nasa-maven-mission-nasa-650_650x400_51428558857.jpg" alt="Mars" loading="lazy">
+                    <div class="neon-overlay">🔴</div>
+                </div>
+                <div class="card-body">
+                    <h3>Mars • 22.5 crore km</h3>
+                    <p data-en="Red dunes, Olympus Mons &amp; potential life! Mangalyaan-2 coming soon" data-te="ఎర్ర ఇసుక దిబ్బలు + ఒలింపస్ మౌంటెన్!">Red dunes, Olympus Mons &amp; potential life! Mangalyaan-2 coming soon</p>
+                    <div class="card-footer">
+                        <button onclick="show360Modal('Mars')" class="explore-360">Explore in 360° 🌍</button>
+                        <button onclick="bookDestination('Mars')" class="book-now">Book Trip ₹12.5 Cr</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ISS -->
+            <div class="destination-card parallax-card" data-depth="0.15">
+                <div class="card-image">
+                    <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202507/shubhanshu-shukla-wowed-viewers-by-performing-water-tricks-145918483-16x9_0.jpg" alt="ISS" loading="lazy">
+                    <div class="neon-overlay">🛰️</div>
+                </div>
+                <div class="card-body">
+                    <h3>International Space Station</h3>
+                    <p data-en="Float in zero gravity! Live experiments with Indian astronauts" data-te="జీరో గ్రావిటీలో ఈదండి!">Float in zero gravity! Live experiments with Indian astronauts</p>
+                    <div class="card-footer">
+                        <button onclick="show360Modal('ISS')" class="explore-360">Explore in 360° 🌍</button>
+                        <button onclick="bookDestination('ISS')" class="book-now">Book Trip ₹8.2 Cr</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Europa -->
+            <div class="destination-card parallax-card" data-depth="0.25">
+                <div class="card-image">
+                    <img src="https://assets.science.nasa.gov/dynamicimage/assets/science/psd/solar/2023/09/2/204_PIA19048.jpg?w=2300&h=1700&fit=clip&crop=faces%2Cfocalpoint" alt="Europa" loading="lazy">
+                    <div class="neon-overlay">❄️</div>
+                </div>
+                <div class="card-body">
+                    <h3>Europa (Jupiter’s moon)</h3>
+                    <p data-en="Hidden ocean beneath ice! Possible alien life? Future ISRO probe?" data-te="మంచు కింద సముద్రం!">Hidden ocean beneath ice! Possible alien life? Future ISRO probe?</p>
+                    <div class="card-footer">
+                        <button onclick="show360Modal('Europa')" class="explore-360">Explore in 360° 🌍</button>
+                        <button onclick="bookDestination('Europa')" class="book-now">Book Trip ₹25 Cr</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Titan -->
+            <div class="destination-card parallax-card" data-depth="0.1">
+                <div class="card-image">
+                    <img src="https://static.scientificamerican.com/sciam/cache/file/8B1E8B0D-AF96-4ED6-890F407EAD5E2747_source.jpg" alt="Titan" loading="lazy">
+                    <div class="neon-overlay">🪐</div>
+                </div>
+                <div class="card-body">
+                    <h3>Titan (Saturn’s moon)</h3>
+                    <p data-en="Lakes of liquid methane &amp; thick orange atmosphere! Epic dune buggy rides" data-te="మీథేన్ సరస్సులు!">Lakes of liquid methane &amp; thick orange atmosphere! Epic dune buggy rides</p>
+                    <div class="card-footer">
+                        <button onclick="show360Modal('Titan')" class="explore-360">Explore in 360° 🌍</button>
+                        <button onclick="bookDestination('Titan')" class="book-now">Book Trip ₹18 Cr</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 360 Modal -->
+    <div id="modal-360" class="modal">
+        <div class="modal-content modal-360-content">
+            <h2 id="modal-destination-name"></h2>
+            <div class="fake-360">
+                <div class="sphere">360° VIEW COMING 2026<br><span class="neon-text">DRAG TO ROTATE • VR READY</span></div>
+                <p id="modal-fact-360"></p>
+            </div>
+            <button onclick="hide360Modal()" class="modal-close">✕ CLOSE</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <!-- Same footer as index.html (omitted for brevity but identical in full project) -->
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="logo-footer">BEYONDSPACE <span class="rocket-emoji">🚀</span></div>
+                <p data-en="Made with ❤️ by Snehalatha" data-te="స్నేహలత చేతి నుండి ❤️ తో తయారు చేయబడింది">Made with ❤️ by Snehalatha</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/snehalathaArakkonam" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/sneha-arakkonam" target="_blank">LinkedIn</a>
+                <a href="mailto:asnehalatha363@gmail.com">Email</a>
+            </div>
+            <div class="footer-right">
+                <p>© 2026 SPACERIDE2026 • All Rights Reserved • India’s Future in Space</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="back-to-top">🚀</button>
+
+    <script src="js/particles.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Parallax on scroll for cards
+        function initParallax() {
+            const cards = document.querySelectorAll('.parallax-card');
+            window.addEventListener('mousemove', (e) => {
+                cards.forEach(card => {
+                    const depth = parseFloat(card.dataset.depth) || 0.1;
+                    const x = (window.innerWidth / 2 - e.clientX) * depth;
+                    const y = (window.innerHeight / 2 - e.clientY) * depth;
+                    card.style.transform = `translate(${x}px, ${y}px)`;
+                });
+            });
+        }
+        
+        function show360Modal(planet) {
+            const modal = document.getElementById('modal-360');
+            document.getElementById('modal-destination-name').innerHTML = planet + ' <span style="color:#00f0ff">360°</span>';
+            document.getElementById('modal-fact-360').innerHTML = `Imagine floating above ${planet}! Real photos from NASA + ISRO coming soon in 2026.<br><br>Fun fact: ${planet === 'Moon' ? 'India’s Chandrayaan-3 landed here!' : 'This place could have alien oceans!'}`;
+            modal.style.display = 'flex';
+            unlockAchievement('explorer-' + planet.toLowerCase());
+        }
+        
+        function hide360Modal() {
+            document.getElementById('modal-360').style.display = 'none';
+        }
+        
+        function bookDestination(dest) {
+            alert(`🎟️ Booking confirmed for ${dest}! Redirecting to Book page...`);
+            setTimeout(() => window.location.href = 'book.html', 1200);
+        }
+        
+        window.onload = () => {
+            initParallax();
+            console.log('%c🌍 Destinations page ready for young astronauts!', 'color:#ff00cc');
+        };
+    </script>
+</body>
+</html>
